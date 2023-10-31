@@ -112,7 +112,7 @@ def list_all_year(current_year):
 
 def get_upcoming():
     current_time = datetime.datetime.now()
-    current_date = current_time.strftime("%d %B")
+    current_date = current_time.strftime("%d %B %Y")
     
     # loop through all index and compare with current date, pick the closest one
     for i in upcoming_races:
