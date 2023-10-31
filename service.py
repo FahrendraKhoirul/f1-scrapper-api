@@ -116,7 +116,7 @@ def get_upcoming():
     
     # loop through all index and compare with current date, pick the closest one
     for i in upcoming_races:
-        if i['date'] < current_date:
+        if i['date'] > current_date:
             print(i['title'])
             print(i['date'])
             print(i['image'])
