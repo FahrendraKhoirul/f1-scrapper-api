@@ -1,3 +1,4 @@
+import os
 from requests_html import HTMLSession
 import json
 from concurrent.futures import ThreadPoolExecutor
@@ -126,3 +127,16 @@ def get_upcoming():
 def save_to_json(result, filename):
     with open(f'{filename}.json', 'w') as f:
         json.dump(result, f)
+
+
+def read_json(filename):
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    file_path = os.path.join(dir_path, 'f1data', f'{str(filename)}.json')
+    try:
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+        return True, data  # File loaded successfully
+    except FileNotFoundError:
+        return False, f"Error: File '{filename}.json' not found in f1data folder."
+    except Exception as e:
+        return False, f"Error: {str(e)}"
