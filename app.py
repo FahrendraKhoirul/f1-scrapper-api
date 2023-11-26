@@ -48,7 +48,7 @@ def get_upcoming():
 
 @app.route('/circuit', methods=['GET'])
 def get_circuit():
-    return jsonify(service.get_circuit())
+    return jsonify(service.get_circuits())
 
 
 
