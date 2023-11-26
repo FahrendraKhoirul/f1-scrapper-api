@@ -4,6 +4,7 @@ import json
 from concurrent.futures import ThreadPoolExecutor
 import datetime
 from upcoming import upcoming_races
+from circuit import circuits
 
 s = HTMLSession()
 
@@ -122,6 +123,10 @@ def get_upcoming():
             print(i['date'])
             print(i['image'])
             return i
+
+def get_circuits():
+    return circuits
+
 
 
 def save_to_json(result, filename):

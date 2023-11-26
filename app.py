@@ -46,6 +46,11 @@ def get_all_season():
 def get_upcoming():
     return jsonify(service.get_upcoming())
 
+@app.route('/circuit', methods=['GET'])
+def get_circuit():
+    return jsonify(service.get_circuit())
+
+
 
 # @app.route('/start', methods=['GET'])
 # def start():
